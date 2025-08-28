@@ -1,12 +1,20 @@
 import React from 'react'
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { Box } from "@mui/material";
+import { useNavigate } from 'react-router-dom'
+
 
 
 function AccountSettingPage() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate('/');
+  };
   return (
-    <div className='login-container'>
+    <div className='account-container'>
         <h2>Account Setting</h2>
+        <br />
         <div className='account-box'>
           <div>
              <Box sx={{ position: "relative", display: "inline-block" }}>
@@ -41,7 +49,11 @@ function AccountSettingPage() {
         </div>
         </div>
         <p className='account-desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui necessitatibus adipisci dicta labore quae sit totam eius doloribus magnam at modi nisi sequi,</p>
-        <hr />
+        <br />
+        <button className='login-btn' onClick={handleLogout}>
+          Logout
+        </button>
+
     </div>
   )
 }

@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "educase-c4767",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
