@@ -8,9 +8,36 @@ function SignInPage() {
   const navigate = useNavigate();
 
   // Handle navigation to account
-  function handleGoToAccount() {
-    navigate("/account");
+  
+  
+function handleGoToAccount(e) {
+    e.preventDefault();
+    setLoginError('');
+    
+    if (validateForm()) {
+      const storedUser = localStorage.getItem('user');
+      
+      if (!storedUser) {
+        setLoginError('User not found. Please sign up first.');
+        return;
+      }
+      
+      const userData = JSON.parse(storedUser);
+      
+      if (userData.email !== formData.email) {
+        setLoginError('User not found. Please check your email.');
+        return;
+      }
+      
+      if (userData.password !== formData.password) {
+        setLoginError('Incorrect password. Please try again.');
+        return;
+      }
+      
+      navigate('/account');
+    }
   }
+  
   function handleGoToSignUp() {
     navigate("/signup");
   }
