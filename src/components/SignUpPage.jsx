@@ -1,43 +1,159 @@
-import React from 'react'
 
-function SignUpPage() {
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import { useNavigate } from 'react-router-dom';
+
+import TextField from '@mui/material/TextField';
+
+export default function SignUpPage() {
+    const navigate = useNavigate();
+
+  // Handle navigation to account
+  function handleGoToAccount() {
+    navigate('/account');
+  }
   return (
-    <div>
-        <div class="login-container">
-    <h2>Create your <br/>PopX account</h2>
-    <form>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter email address" required/>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required/>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required/>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required/>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required/>
-      </div>
-      <div className="form-group">
-        <p>Are you an Agency?</p>
-        <label>Yes</label>
-        <input type="checkbox" name="" id="" />
-        <label>No</label>
-        <input type="checkbox" name="" id="" />
-      </div>
-      <button type="submit" class="btn">Login</button>
-    </form>
-  </div>
-    </div>
-  )
-}
+     <>
+        <div className="login-container">
+        <h2>Create your <br/>PopX account</h2>
 
-export default SignUpPage
+    <Box
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Full Name"
+            sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        },
+        '& .MuiInputLabel-asterisk': {
+          color: 'red', // Change the color of the asterisk
+          fontSize: '1.2rem', // Change the font size
+          fontWeight: 'bold', // Make it bold
+        },
+      }}
+          defaultValue="Marry Doe"
+          
+        />
+        
+      </div>
+    </Box>
+<Box
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Phone number"
+          sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        },
+        '& .MuiInputLabel-asterisk': {
+          color: 'red', // Change the color of the asterisk
+          fontSize: '1.2rem', // Change the font size
+          fontWeight: 'bold', // Make it bold
+        },
+      }}
+        
+          defaultValue="Marry Doe"
+        />
+        
+      </div>
+    </Box>
+<Box
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Email address"
+            sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        },
+        '& .MuiInputLabel-asterisk': {
+          color: 'red', // Change the color of the asterisk
+          fontSize: '1.2rem', // Change the font size
+          fontWeight: 'bold', // Make it bold
+        },
+      }}
+          defaultValue="Marry Doe"
+        />
+        
+      </div>
+    </Box>
+<Box
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Password"
+             sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        },
+        '& .MuiInputLabel-asterisk': {
+          color: 'red', // Change the color of the asterisk
+          fontSize: '1.2rem', // Change the font size
+          fontWeight: 'bold', // Make it bold
+        },
+      }}
+          defaultValue="Marry Doe"
+        />
+        
+      </div>
+    </Box>
+   <Box
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        },
+     
+      }}
+          id="outlined-required"
+          label="Company name"
+          defaultValue="Marry Doe"
+        />
+      </div>
+    </Box>
+    
+    <div className="form-group">
+        <p >Are you an Agency?</p>
+        <input className='radio-btn' type="radio" name="" id="" />
+        <label >Yes</label>
+        <input className='radio-btn'  type="radio" name="" id="" />
+        <label>No</label>
+      </div>
+      <button type="submit" className="btn" onClick={handleGoToAccount}>Create Account</button>
+  </div>
+    </>
+  
+  );
+}

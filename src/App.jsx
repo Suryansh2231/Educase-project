@@ -15,7 +15,7 @@ function App() {
       <LandingPage/>
       <SignIn/>
       <Account/>
-      <AccountSetting/>
+      <AccountSetting/> 
       </div>
 
     </>

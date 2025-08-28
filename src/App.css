@@ -17,8 +17,6 @@ body {
    position:absolute;
    bottom:0;
    width:100%;
-   background: lightblue;
-   /* overflow-x: hidden; */
 }
 
 
@@ -27,36 +25,37 @@ body {
   font-size: 2rem;
 }
 .page button{
-  margin:10px;
+  margin-top:10px;
   border-radius: 10px;
 }
 .page p{
   color: #999;
-  font-size: 20px;
-  width: 60%;
+  width: 70%;
 }
 .sign-up-btn{
   height: 40px;
-  width: 350px;
+  width: 300px;
   background-color: #471396;
   color: white;
   font-size: 20px;
 }
 .login-btn{
   height: 40px;
-  width: 350px;
+  width: 300px;
   background-color: #D6DAC8;
   font-size: 20px;
 
 }
 
     .login-container {
-      background: #fff;
+      background: #f7f8f9;
       padding: 40px 30px;
       border: 1px solid #ddd;
       border-radius: 6px;
       width: 350px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: auto;
+
     }
 
     .login-container h2 {
@@ -65,7 +64,7 @@ body {
       margin-bottom: 8px;
     }
 
-    .login-container p {
+    .form-group p {
       font-size: 14px;
       color: #666;
       margin-bottom: 25px;
@@ -73,34 +72,17 @@ body {
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      color: #6a0dad; /* Purple like in image */
-      margin-bottom: 4px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    .form-group input::placeholder {
-      color: #999;
-      font-weight: normal;
+    
+    .radio-btn{
+      margin-left: 10px;
     }
 
     .btn {
       width: 100%;
       padding: 12px;
-      background-color: #ccc; /* grey disabled style */
+      background-color: #471396;
       border: none;
       border-radius: 6px;
       font-size: 16px;
@@ -108,3 +90,24 @@ body {
       color: #fff;
       cursor: not-allowed;
     }
+
+    
+    
+  .radio-btn{
+    padding: 0 10px;
+  }
+  .box{
+    margin-top: 20px;
+  }
+  .account-box{
+    display: flex;
+  }
+  .account-detail{
+    margin-left: 20px;
+  }
+  .account-desc{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+
+  }

@@ -1,19 +1,41 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function LandingPage() {
   const navigate = useNavigate();
-    function handleGoToSignUp() {
+
+  // Handle navigation to Sign Up
+  function handleGoToSignUp() {
     navigate('/signup');
   }
+
+  // Handle navigation to Sign In
+  function handleGoToSignIn() {
+    navigate('/signin');
+  }
+
   return (
-    <div className='page'>
-        <h1>Welcome to PopX</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <button className='sign-up-btn' onClick={handleGoToSignUp}
-      >Create Account</button>
-        <button className='login-btn'>Already Resistered? Login</button>
+    <div className='page'>   
+     <div className='login-container'>
+      <h2>Welcome to PopX</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+      <button 
+        className='sign-up-btn' 
+        onClick={handleGoToSignUp}
+      >
+        Create Account
+      </button>
+
+      <button 
+        className='login-btn' 
+        onClick={handleGoToSignIn}
+      >
+        Already Registered? Login
+      </button>
     </div>
+    </div>
+
   )
 }
 

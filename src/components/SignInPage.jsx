@@ -1,23 +1,68 @@
-import React from 'react'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import { useNavigate } from 'react-router-dom';
+
+import TextField from '@mui/material/TextField';
+
 
 function SignInPage() {
+
+  
+  const navigate = useNavigate();
+
+  // Handle navigation to account
+  function handleGoToAccount() {
+    navigate('/account');
+  }
   return (
     <div>
-        <div class="login-container">
+        <div className="login-container">
     <h2>Signin to your <br/>PopX account</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-    <form>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="Enter email address" required/>
+     <Box
+     className='box'
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '100%' } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Email Address"
+           sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        }}}
+          defaultValue="Enter email address"
+        />
+        
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password" required/>
+    </Box>
+    <Box
+      component="form"
+      sx={{ '& .MuiTextField-root': { m: 1, width: '100%', } }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          required
+          id="outlined-required"
+          label="Password"
+           sx={{
+        '& .MuiInputLabel-root': { // Targets the label
+          color: 'blue',
+        }}}
+          defaultValue="Enter password"
+        />
+        
       </div>
-      <button type="submit" class="btn">Login</button>
-    </form>
+    </Box>
+
+      <button type="submit" className="login-btn" onClick={handleGoToAccount}>Login</button>
   </div>
 
     </div>
