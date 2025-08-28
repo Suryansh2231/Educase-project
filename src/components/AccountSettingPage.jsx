@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { Box } from "@mui/material";
 import { useNavigate } from 'react-router-dom'
 
 
-
 function AccountSettingPage() {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState({ fullName: 'Marry Doe', email: 'Marry@Gmail.com' });
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUserData(JSON.parse(storedUser));
+    }
+  }, []);
 
   const handleLogout = () => {
     navigate('/');
   };
+
   return (
     <div className='account-container'>
         <h2>Account Setting</h2>
@@ -44,8 +52,8 @@ function AccountSettingPage() {
     </Box>
         </div>
         <div className='account-detail'>
-        <h1>Marry Doe</h1>
-        <p>Marry@Gmail.com</p>
+        <h1>{userData.fullName}</h1>
+        <p>{userData.email}</p>
         </div>
         </div>
         <p className='account-desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui necessitatibus adipisci dicta labore quae sit totam eius doloribus magnam at modi nisi sequi,</p>
@@ -53,7 +61,6 @@ function AccountSettingPage() {
         <button className='login-btn' onClick={handleLogout}>
           Logout
         </button>
-
     </div>
   )
 }
